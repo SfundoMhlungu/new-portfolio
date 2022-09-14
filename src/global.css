@@ -1,0 +1,12 @@
+
+
+/* kevin powell flex patterns */
+.grid-ish {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.grid-ish > * {
+    flex: 1 1  10em;
+}

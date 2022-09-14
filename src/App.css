@@ -1,0 +1,89 @@
+.NavBar{
+  /* width: 100vw; */
+  height: 10vh;
+  /* background: yellow; */
+  /* padding: 0;
+  margin: 0; */
+  margin: 0  -2em;
+  align-items: center;
+  z-index: -4;
+
+
+}
+
+.NavBar > *{
+  margin: 0 2em;
+
+}
+
+
+
+.hero{
+
+ height: 90vh;
+ position: relative;
+ margin: 0  -2em;
+
+}
+
+/* .hero > * {
+  margin: 0 2em;
+} */
+
+
+.featured{
+  height: 100vh;
+}
+
+
+.App{
+    
+  /* width: 100vw; */
+  margin: 0 2em;
+
+}
+
+
+
+
+.overlay-op{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -2;
+  /* margin: 0  -2em; */
+  background-color: rgba(0, 0,0, 0);
+}
+
+.hero-img{
+ position: absolute;
+ top: -12vh;
+ left: 0;
+ height: 100%;
+ width: 100%;
+ z-index: -3;
+ /* margin: 0  -2em; */
+ opacity: 0.7;
+}
+
+img {
+  object-fit: cover;
+  /* opacity: ; */
+
+}
+
+.hero-img img{
+  height: 100vh;
+  width: 100vw;
+
+}
+
+.bounds{
+  position: relative;
+}
+
+.nr{
+  margin-right: -2em;
+}

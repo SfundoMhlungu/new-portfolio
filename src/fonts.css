@@ -1,0 +1,16 @@
+
+@font-face {
+  font-family: 'Basement Grotesque';
+  src:
+    url('/fonts/grotesque/BasementGrotesque-Black_v1.202.otf') format('woff2');
+   
+  /* font-weight: 800;
+  font-style: normal;
+  font-display: swap; */
+}
+
+
+@font-face {
+  font-family: "Aileron";
+  src: url("/fonts/aileron/Aileron-regular");
+}
