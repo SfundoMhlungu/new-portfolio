@@ -1,7 +1,11 @@
+
+
+
 .NavBar{
   /* width: 100vw; */
   height: 10vh;
-  /* background: yellow; */
+  
+  background: var(--white);
   /* padding: 0;
   margin: 0; */
   margin: 0  -2em;
@@ -18,6 +22,10 @@
 
 
 
+
+/* body{
+ 
+} */
 .hero{
 
  height: 90vh;
@@ -40,9 +48,27 @@
     
   /* width: 100vw; */
   margin: 0 2em;
+  position: relative;
 
 }
 
+
+.menu {
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 9;
+  /* margin: 0  -2em; */
+  background-color:  white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
 
 
 
@@ -59,13 +85,13 @@
 
 .hero-img{
  position: absolute;
- top: -12vh;
+ /* top: -12vh; */
  left: 0;
  height: 100%;
  width: 100%;
  z-index: -3;
  /* margin: 0  -2em; */
- opacity: 0.7;
+ opacity: .8;
 }
 
 img {
@@ -74,9 +100,27 @@ img {
 
 }
 
-.hero-img img{
-  height: 100vh;
+.hero-img2{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -3;
+  /* margin: 0  -2em; */
+  opacity: .9;
+  overflow: hidden;
+}
+
+.hero-img2 img{
+  object-fit: contain;
+  /* height: 100vh; */
   width: 100vw;
+}
+
+.hero-img img{
+  height: 100%;
+  width: 100%;
 
 }
 
@@ -86,4 +130,156 @@ img {
 
 .nr{
   margin-right: -2em;
+}
+
+.typing {
+  position: relative;
+  min-height: 1em;
+}
+
+.typing::after{
+   content: "";
+   position: absolute;
+   width: 2px;
+   height: 100%;
+   
+   border-right: 2px solid black;
+   animation: blink .5s infinite;
+    
+}
+
+
+.hi{
+  /* height: 1em; */
+  /* background-color: yellow; */
+}
+
+
+@keyframes blink {
+ 0%{
+  opacity: 0;
+ }
+ 100%{
+   opacity: 1;
+ }
+}
+
+
+
+.text-col a {
+  font-weight: 800;
+  font-size: 1.5rem;
+  padding: 2em 0;
+  color: var(--grey);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+
+.lets-talk a{
+  font-weight: 800;
+  /* font-size: 1.5rem; */
+  padding: 2.5em 0;
+  color: rgb(35, 48, 62);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.learn-more {
+  position: relative;
+}
+
+.learn-more::after {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: 0;
+  background-color: var(--rose-700);
+  width: 100%;
+  height: 5px;
+  opacity: .7;
+}
+
+li a {
+  font-family: "Aileron";
+}
+
+.lets-talk{
+  position: relative;
+}
+.lets-talk::after{
+  position: relative;
+  content: "";
+  position: absolute;
+  top: 67%;
+  left: 0;
+  /* background-color: red; */
+  width: 100%;
+  height: 5px;
+  opacity: .7;
+}
+
+
+.menu{
+position: absolute;
+}
+
+.left-panel-background, .right-panel-background {
+  width: 50vw;
+  height: 100vh;
+  position: absolute;
+
+  z-index: 11;
+ 
+  
+}
+
+.right-panel-background {
+    right: 0;
+
+}
+
+
+.left-panel-background{
+  left: 0;
+}
+
+
+.projects{
+  /* width: 100vw; */
+  min-height: 100vh;
+}
+
+ol {
+  display: flex;
+  height: 128px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.title {
+  font-size: 32px;
+  margin-left: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.title.selected{
+  font-size: 64px;
+}
+
+.underline{
+  width: 100%;
+  height: 8px;
+  border-radius:4px;
+  position: absolute;
+  bottom: -4px;
+}
+
+
+.details {
+  justify-content: flex-end;
+  padding: .5em;
+
 }

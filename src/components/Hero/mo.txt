@@ -1,0 +1,11 @@
+    <div className="flex flex-col justify-center" style={{marginRight: "2em"}}>
+      {/* low level p */}
+      <h2>Low level Coder.</h2>
+      <p className="mb-6">I enjoy implementing lower level concepts in JS and creating efficient wasm modules in zig.</p>
+      <div className="text-col">
+          <a className="learn-more">
+           Featured 🖱
+          </a>
+          </div>
+    </div>
+  

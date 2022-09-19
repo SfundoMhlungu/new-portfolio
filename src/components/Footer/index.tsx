@@ -9,7 +9,7 @@ function Foooter(){
 
   return (
   
-   <div> 
+   <div id="gooter">  
        Gooter
    
    </div>
