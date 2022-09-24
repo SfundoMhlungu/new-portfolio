@@ -36,12 +36,13 @@ body {
   /* font-family: "Aileron"; */
   /* width: 100%;
   height: 100%; */
-  background-color: var(--white);
+  background-color: #242a45;
+  z-index: -1000;
 }
 
 
 h1, h2{
-  color: var(--blue);
+  color: #b1b7d9;
 
 }
 h1 {
@@ -55,7 +56,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2.5em;
+  font-size: 2em;
   line-height: 1.1;
 
   /* font-weight: 100; */
@@ -69,6 +70,10 @@ h2 {
 /* hsl(168, 34%, 41%) */
 }
 
+#target {
+  font-size: 4.5em;
+  color: #b1b7d9;
+}
 
 
 h3{
@@ -76,7 +81,7 @@ h3{
   line-height: 1.1;
   font-family: "Basement Grotesque";
   /* font-weight: 400; */
-  color:var(--grey);
+  color: #00001e;
   /* hsl(213, 9%, 39%) */
   /* hsl(232, 10%, 55%) */
 }
@@ -87,7 +92,7 @@ h3{
 p {
   font-size: 1.5em;
   font-family: "Aileron";
-  color:  var(--blue);
+  color: #69719b;
 }
 
 /* 

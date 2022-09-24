@@ -99,11 +99,12 @@ export function useTypeWriter() : (args: TypeW) => void{
   }
   const spedUp = Math.random() * (80 -50) + 50
   const normalSpeed = Math.random() * (300 -200) + 200
-  const time = isEnd ? 2000 : isDeleting ? spedUp : normalSpeed
+  const time = isEnd ? 2000 : isDeleting ? 50 : 200
   
   const l = setTimeout(() => {
     if(lastLoop && isEnd){
         console.log("STOP HERE")
+        textDisplay.classList.remove("typing")
         clearInterval(l);
         return
     };

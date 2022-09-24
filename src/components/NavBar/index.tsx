@@ -18,9 +18,9 @@ function NavBar({openMenu}){
            <img src="/patterns/PNG/1.png" />
          </div> */}
        <div className="w-full bg-indigo grid-ish">
-           <div>
+           {/* <div>
                <h3>Personal.</h3>
-           </div>
+           </div> */}
 
            <div >
                 <ul className="flex justify-end">
@@ -38,7 +38,11 @@ function NavBar({openMenu}){
                         <a href="#">Let's talk</a>
                     </li> */}
                     <li>
-                        <a  className="text-black"  href="#" onClick={() => openMenu(true)}>HamBTN</a>
+                        <a  className="text-black"  href="#" onClick={() => openMenu(true)}>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </a>
                     </li>
                 </ul>
            </div>

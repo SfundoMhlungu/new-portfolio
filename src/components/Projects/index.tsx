@@ -41,7 +41,7 @@ const p: Array<project>  = [
               },
               {
                name: "t24", 
-               avatar: "",
+               avatar: "/projects/t24/1.png",
                tools: ["JavaScript", "CSS", "HTML", "Supabase DB", "netlify serveless FN's" ],
                description: "Website for an ebook",
                type: {"Projects": "", "All": ""},
@@ -65,7 +65,7 @@ const p: Array<project>  = [
               },
               {
                name: "Atomicus", 
-               avatar: "",
+               avatar: "/projects/atomicus/1.png",
                tools: ["Typescript"],
                description: "Utility functions for creating stateful HTML elements",
                type: {"DevTools": "", "All": ""},
@@ -73,7 +73,7 @@ const p: Array<project>  = [
               },
               {
                name: "Bokke.js", 
-               avatar: "",
+               avatar: "/projects/bokke/1.png",
                tools: ["Typescript", "Web workers", "Chart.js"],
                description: "Dataframe package",
                type: {"DevTools": "", "All": ""},
@@ -82,7 +82,7 @@ const p: Array<project>  = [
               {
 
                name: "Vanilla Forms", 
-               avatar: "",
+               avatar: "/projects/vanilla/1.png",
                tools: ["Typescript"],
                description: "Tool for creating reactive forms in JS",
                type: {"DevTools": "", "All": ""},
@@ -126,7 +126,7 @@ function Projects(){
 return (
 
 
-<div className="projects"> 
+<div className="content"> 
 
      <p>My Work</p>
    
