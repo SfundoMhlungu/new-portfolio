@@ -5,7 +5,7 @@
 
 
 
-
+//@ts-ignore
 function NavBar({openMenu}){
 
 

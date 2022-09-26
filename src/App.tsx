@@ -126,7 +126,7 @@ function App() {
 
 export default App
 
-
+//@ts-ignore
 const Menu = ({openMenu, open}) => {
 
 

@@ -129,8 +129,8 @@ return (
 <div className="content"> 
 
 
-   
-          <AnimateSharedLayout transition={{duration: .2}}>
+
+          <AnimateSharedLayout>
           {/* the header(framered list) */}
           <motion.ol className="">
                {filters.map(({title, color}, i)=> (
@@ -183,7 +183,7 @@ export default Projects
 
 
 const transition = {duration: .8, ease: [0.6,-.05, .01, .9 ]}
-
+//@ts-ignore
 function Project({p, even}){
      return (
           <motion.div
@@ -203,7 +203,8 @@ function Project({p, even}){
                          
                   </div>
                   <div className="flex justify-center hide-for-mobile">
-                       {p.tools.map((tool)=> {
+               
+                       {p.tools.map((tool: any)=> {
                             return <div className="m-2">
                                  {typeof tool === "object" ? 
                                   <p>{tool.name}</p>:

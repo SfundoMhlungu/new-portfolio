@@ -59,7 +59,7 @@ const item2 = {
 }
 
 
-
+//@ts-ignore
 function Hero({openMenu}){
   const writer = useTypeWriter();
   console.log("rerender")
