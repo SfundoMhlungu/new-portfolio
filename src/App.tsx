@@ -22,7 +22,17 @@ const transition = {duration: .8, ease: [0.6,-.05, .01, .9 ]}
 
 function App() {
    const [menuOpen, setMenOpen]= useState(false);
-   const [open, setOpen] = useState("Home");
+   const [open, setOpen_] = useState("Home");
+
+
+
+   const setOpen = (arg: string) => {
+        setOpen_("Loading")
+        const l = setTimeout(() => {
+            setOpen_(arg);
+            clearTimeout(l)
+        }, 1850);
+   }
    useEffect(()=> {
           // TODO figure out how to hide vertical scrollbar
           if(menuOpen){
@@ -42,7 +52,7 @@ function App() {
     <div className={`App relative`}>
  
  <ul>
-    <li className='ul hidden'>
+    <li className='ul hide-for-desktop'>
                         <a className="text-black"  href="#" onClick={() => setMenOpen(true)}>
                             <div></div>
                             <div></div>
@@ -52,30 +62,45 @@ function App() {
                 </ul>
         <div className='ham--menu con'>
                  
-          <div className='w-full side--links flex flex-col'>
+          <div className='w-full side--links flex flex-col  hide-for-mobile'>
             <div className='devImg'>
               <img src="/dev.jpg"/>
+            </div>
+            <div className='flex justify-evenly bg-green icons mt-4'>
+              <a href="https://twitter.com/MhlunguSfundo" target="_blank">
+              <img style={{height: "40px"}} src="icons8-twitter-30.png"/>
+
+              </a>
+              <a href="https://github.com/SfundoMhlungu" target="_blank">
+
+      
+              <img style={{height: "40px"}} src="icons8-github-50.png"/>
+            </a>
+            <a href="https://github.com/SfundoMhlungu" target="_blank">
+
+            <img style={{height: "40px"}} src="icons8-linkedin-50.png"/>
+            </a>
             </div>
             {/* <a className='text-2xl ml-12'>Sfundo Mhlungu</a> */}
             {/* <a>Frontend dev</a> */}
              {/* <NavBar openMenu={setMenOpen}/> */}
             <div className='actualLinks'>
-              <div className='flex selected'>
+              <div className={`flex ${open === "Home" ? "selected": ""}`}>
                 <FaHome/>
               <a onClick={() => setOpen("Home")}>Home</a>
               </div>
-              <div className='flex'>
+              <div className={`flex ${open === "Me" ? "selected": ""}`}>
                 <FaMale/>
              <a  onClick={() => setOpen("Me")}> Me</a>
              </div>
-             <div className='flex'>
+             <div className={`flex ${open === "Projects" ? "selected": ""}`}>
                <FaBriefcase/>
              <a  onClick={() => setOpen("Projects")}>Projects</a>
              </div>
-             <div className='flex'>
+             {/* <div className={`flex ${open === "" ? "selected": ""}`}>
                <FaCommentDots/>
-             <a  onClick={() => setOpen("")}>Contacts</a>
-             </div>
+             <a  onClick={() => setOpen("")}>Contact</a>
+             </div> */}
             </div>
            
               
@@ -83,7 +108,7 @@ function App() {
           <motion.div className='content ml-2'>
   
         { open === "Home" ?   <Hero openMenu={setMenOpen}/>  : open === "Projects" ? <Projects/> :
-         open === "Me" ?   <Me/> :  <Foooter/>
+         open === "Me" ?   <Me/> : open === "Loading" ? <Panels/> :  <></>
         }
        
             {/* <Featured/> */}

@@ -24,9 +24,9 @@ interface project {
 
 const p: Array<project>  = [
              {
-              name: "bokke GUI", 
+              name: "bokke", 
               avatar: "/projects/Bokkegui/7.png",
-              tools: ["JavaScript", "CSS", "HTML", {name: "Atomicus"},{name: "Bokke.js"}],
+              tools: [" JavaScript ", " CSS ", " HTML ", {name: " Atomicus "},{name: " Bokke.js "}],
               description: "Desktop Dataframe Software",
               type: {"Projects": "", "All": ""},
 
@@ -34,15 +34,15 @@ const p: Array<project>  = [
              {
                name: "Pam", 
                avatar: "/projects/Pam/3.png",
-               tools: ["React", "Next Js", "Ionic", "Tailwind", "PullState"],
-               description: "Allergic reaction tracker/predictor", 
+               tools: [" React ", " Next Js ", " Ionic ", " Tailwind ", " PullState "],
+               description: "Allergic reaction tracker & predictor", 
                type: {"Projects": "", "All": ""},
  
               },
               {
                name: "t24", 
                avatar: "/projects/t24/1.png",
-               tools: ["JavaScript", "CSS", "HTML", "Supabase DB", "netlify serveless FN's" ],
+               tools: [" JavaScript "  , " CSS " , " HTML ", " Supabase ", " netlify serveless " ],
                description: "Website for an ebook",
                type: {"Projects": "", "All": ""},
  
@@ -50,15 +50,15 @@ const p: Array<project>  = [
               {
                name: "AlgoViz", 
                avatar: "",
-               tools: ["JavaScript", "CSS", "HTML", {name: "Atomicus"}, "Canvas"],
-               description: "Algorithms Viz Frontend",
+               tools: [ " JavaScript ", " CSS ", " HTML ", {name: " Atomicus "}, " HTML canvas  "],
+               description: "Algorithm Visualizer Front-end",
                type: {"Projects": "", "All": ""},
  
               },
               {
                name: "Texte", 
                avatar: "",
-               tools: ["JavaScript", "CSS", "HTML", {name: "Atomicus"}, "ML5"],
+               tools: [" JavaScript ", " CSS ", " HTML ", {name: " Atomicus "}, " ML5 "],
                description: "Natural Language Processing Frontend",
                type: {"Projects": "", "All": ""},
  
@@ -66,7 +66,7 @@ const p: Array<project>  = [
               {
                name: "Atomicus", 
                avatar: "/projects/atomicus/1.png",
-               tools: ["Typescript"],
+               tools: [" Typescript " ],
                description: "Utility functions for creating stateful HTML elements",
                type: {"DevTools": "", "All": ""},
  
@@ -74,7 +74,7 @@ const p: Array<project>  = [
               {
                name: "Bokke.js", 
                avatar: "/projects/bokke/1.png",
-               tools: ["Typescript", "Web workers", "Chart.js"],
+               tools: [" Typescript ", " Web workers ", " Chart.js "],
                description: "Dataframe package",
                type: {"DevTools": "", "All": ""},
  
@@ -83,7 +83,7 @@ const p: Array<project>  = [
 
                name: "Vanilla Forms", 
                avatar: "/projects/vanilla/1.png",
-               tools: ["Typescript"],
+               tools: [" Typescript "],
                description: "Tool for creating reactive forms in JS",
                type: {"DevTools": "", "All": ""},
  
@@ -92,7 +92,7 @@ const p: Array<project>  = [
 
                name: "vec", 
                avatar: "",
-               tools: ["Zig", "wasm", "JavaScript"],
+               tools: [" Zig ", " wasm " , " JavaScript "],
                description: "",
                type: {"DevTools": "", "All": ""},
  
@@ -128,17 +128,17 @@ return (
 
 <div className="content"> 
 
-     <p>My Work</p>
+
    
           <AnimateSharedLayout transition={{duration: .2}}>
           {/* the header(framered list) */}
-          <motion.ol>
+          <motion.ol className="">
                {filters.map(({title, color}, i)=> (
                     <motion.h3
                     key={i}
                     onClick={() => {filterP(title), setSelected(i)}} 
                     className= {`title ${i === selected && "selected"}`}
-                    style={{color: i === selected ? color: "#333"}}
+                    style={{color: i === selected ? color: "#f2f3ff"}}
                     layout
                       
                     >
@@ -158,12 +158,15 @@ return (
          </motion.ol>
           </AnimateSharedLayout>
  
-          <motion.div animate className="grid-ish">
+          <motion.div animate className="w-full m-4 h-auto" >
           {/* filtered projects */}
           {projects.map((p, i)=> (
-               <div>
-                    <Project p={p}/>
-               </div>
+               
+                    <>
+                       { i % 2 == 0 ?  <Project p={p} even={true}/> : <Project p={p} even={false}/>}
+                    </>
+                  
+              
           ))}
      </motion.div>
 
@@ -179,122 +182,45 @@ return (
 export default Projects
 
 
+const transition = {duration: .8, ease: [0.6,-.05, .01, .9 ]}
 
-
-
-/*
-type of projects I have:
-   
-all :
-   bokke  
-   atomicus
-   vanilla forms
-   petal
-   pam  - feat
-   bokke GUI  - featu
-   t24
-   port
-   algoViz
-   vec
-   texte - featu
-
-
-
-   Projects
-    bokke GUI  - featu
-    pam  - feat
-    t24
-    port
-    algoViz
-    texte - featu
-   
-   DevTools
-   
-     atomicus
-     vanilla forms
-     petal
-     vec
-  
-   Articles
-     dev.to api 
-
-   
-
-
-
-
-
-
-*/
-
-interface ForP {
-     p: project
-}
-
-
-
-function Project({p}){
-
-
-   return (
-        <motion.div className="shadow-lg h-96 w-96 m-4 relative rounded-md">
-             <div className="hero-img">
-                <img src={p.avatar} /> 
-             </div>
-              <Details details={p}/>
-         </motion.div>
-
-
-
-   )
-
-}
-
-function Details({details}){
-
-
+function Project({p, even}){
      return (
-          <div className="w-full h-full flex details flex-col">
-                  <div className="w-full flex">
-                     <h2>{details.name}</h2>
-                     <div className="ml-4">
-                          <button className="buttons">View</button>
-                     </div>
+          <motion.div
+          initial={{opacity: 0}}
+          animate= {{opacity: 1}}
+          transition={{...transition, duration: .8}}
+          className={`grid-ishp mt-12  ${even ? 'flow-reverse': "flow-normal "}`} style={{height: "100vh"}}>
+               <div>
+                  <div className="flex justify-center">
+                       <h1>{p.name}</h1>
                   </div>
-           
-                  <p>{details.description}</p>
-                  {/* <div  className="grid-ish">
-                       {details.tools.map((tool)=> (
-                            <Tool tool={tool}/>
-                       ))}
-                  </div> */}
-            {/* {  Object.keys(details).map((key, i) => (
-                   <div>
-                        {JSON.stringify(details)}
-                     <h2>{details[key].name}</h2>
-                     <h3>{details[key].description}</h3>
-                   </div>
-              )) } */}
-          </div>
-     )
-}
+                  <div className="details relative mt-4">
+                       <div className="details-card text-center shade">
+                         <p>{p.description}</p> 
+                       </div>
 
+                         
+                  </div>
+                  <div className="flex justify-center hide-for-mobile">
+                       {p.tools.map((tool)=> {
+                            return <div className="m-2">
+                                 {typeof tool === "object" ? 
+                                  <p>{tool.name}</p>:
+                                  <p>{tool}</p>   
+                              }
+                            </div>
+                         //    typeof tool === "object"? 
+                         //     (<p>{tool.name}</p>):
+                         //    (<p>{tool}</p>)
+                       })}
 
-function Tool({tool}){
-
-
-     return (
-          <div>
-              {typeof tool === "object" ?  
-                 <div>
-                      <div className="w-fit p-2 shadow-md rounded-md bg-slate">
-                         <label>{tool.name}</label>
-                      </div>
-                 </div> :
-                  <div className="w-fit p-2 shadow-md rounded-md bg-slate">
-                      <label>{tool}</label>
-                 </div>    
-          }
-          </div>
+                  </div>
+               </div>
+              <div className="w-full h-96 flex justify-center img-p">
+                  <motion.img animate src={p.avatar}/>
+              </div>
+              
+          </motion.div>
      )
 }

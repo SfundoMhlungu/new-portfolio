@@ -1,12 +1,8 @@
 import {useEffect} from "react";
 import {useTypeWriter} from "../../Hooks/useTypeWriter";
 import {AnimatePresence, motion} from "framer-motion"
-import Spline from '@splinetool/react-spline';
-import NavBar from "../NavBar";
-import Panels from "../Panels";
-import hljs from 'highlight.js/lib/core';
-import javascript from 'highlight.js/lib/languages/javascript';
-hljs.registerLanguage('javascript', javascript);
+
+
 
 const container = {
   show: {
@@ -38,6 +34,30 @@ const item = {
     }
   }
 }
+
+const item2 = {
+  hidden: {
+    opacity: 0,
+    y: 50
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      ease: [.6, .01, -.05, .95],
+      duration: .9,
+    }
+  },
+  exit: {
+    opacity: 0,
+    y: -50,
+    transition: {
+      ease: "easeInOut",
+      duration: 0.8,
+    }
+  }
+}
+
 
 
 function Hero({openMenu}){
@@ -110,23 +130,23 @@ return (
     className="flex flex-col justify-center relative" style={{marginLeft: "2em", marginBottom: "20vh"}}>
    
        <motion.div 
-            variants={item}
+            variants={item2}
        className="hi">
            <motion.h1
-            variants={item}
+            variants={item2}
             >Hi👋🏽,</motion.h1>
-           <motion.h2  variants={item}  id="target" className="typing"></motion.h2>
+           <motion.h2  variants={item2}  id="target" className="typing"></motion.h2>
         </motion.div>
       {/* frontend dev */}
         {/* <h2>Frontend Dev.</h2> */}
         <motion.div
-          variants={item}
+          variants={item2}
         >
           <p className="p">
-            I am passionate about building high perfomant, scalable Frontend app's for all plartforms with javascript.
+          a Front-end developer. Building robust, scalable and performant apps in JavaScript for all platforms.
           </p>
           <div className="text-col">
-          <motion.a variants={item} className="learn-more">
+          <motion.a target="_blank" href="mailto:mhlungusk@gmail.com" variants={item2} className="learn-more">
           Let's Talk
           </motion.a>
           </div>

@@ -13,3 +13,13 @@
 - Dark grayish blue: hsl(232, 10%, 55%)
 - Grayish blue: hsl(210, 4%, 67%)
 - White: hsl(0, 0%, 100%)
+
+
+
+  --purple: "#5267DF";
+  --red: "#FA5959";
+  --blue: "#242A45";
+  --grey: "#9194A2";
+  --white: "#f7f7f7";
+  --rose-700: "#BE123C";
+  --pamGreen: "#21bd9d";

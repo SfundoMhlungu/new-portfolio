@@ -10,7 +10,7 @@ export default function() {
 
     <>
     <motion.div
-      style={{background: panelAnimeComplete ?  "#e5e5e5" : "#e7e7de"}}
+      style={{background: panelAnimeComplete ?  "#e6e7ff" : "#e6e7ff"}}
        initial={{height: 0}}
        animate={{height: [0, window.innerHeight, 0], bottom: [0, 0, 0]}}
        exit={{height: [0, window.innerHeight, 0], top: [null, 0, 0]}}
@@ -18,7 +18,7 @@ export default function() {
     className="left-panel-background border-sm"></motion.div>
     <motion.div 
     // "#e7e7de" : "#e7dee7"
-    style={{background: panelAnimeComplete ? "#e5e5e5" : "#e7e7de"}}
+    style={{background: panelAnimeComplete ? "#e6e7ff" : "#e6e7ff"}}
     initial={{height: 0}}
     animate={{height: [0, window.innerHeight, 0], bottom: [0, 0, window.innerHeight]}}
     exit={{height: [0, window.innerHeight, 0], bottom: [null, 0, 0]}}
