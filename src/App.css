@@ -127,12 +127,21 @@
   background-color:  white;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
+
 
 
 }
 
 
+.menu > *{
+  margin-top: 2em;
+
+}
+
+.w{
+  color: #00001e;
+}
 
 .overlay-op{
   position: absolute;

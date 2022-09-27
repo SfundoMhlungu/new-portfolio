@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import {motion, AnimatePresence, AnimateSharedLayout} from "framer-motion"
-import { FaHome, FaMale, FaBriefcase, FaCommentDots } from "react-icons/fa";
+import { FaHome, FaMale, FaBriefcase, FaCommentDots, FaBackward } from "react-icons/fa";
 
 // componets
 import NavBar from "./components/NavBar/"
@@ -33,6 +33,16 @@ function App() {
             clearTimeout(l)
         }, 1850);
    }
+
+   const setOpenM = (arg: string) => {
+    // setOpen_("Loading")
+    setOpen_(arg);
+    setMenOpen(false)
+    // const l = setTimeout(() => {
+     
+    //     clearTimeout(l)
+    // }, 1850);
+}
    useEffect(()=> {
           // TODO figure out how to hide vertical scrollbar
           if(menuOpen){
@@ -47,7 +57,7 @@ function App() {
   return (
     <>
     
-        <Menu openMenu={setMenOpen} open={menuOpen}/>
+        <Menu openMenu={setMenOpen} open={menuOpen} setOpen={setOpenM}/>
     
     <div className={`App relative`}>
  
@@ -127,7 +137,7 @@ function App() {
 export default App
 
 //@ts-ignore
-const Menu = ({openMenu, open}) => {
+const Menu = ({openMenu, open, setOpen}) => {
 
 
 
@@ -146,9 +156,31 @@ const Menu = ({openMenu, open}) => {
              initial={{opacity: 0}}
              animate= {{opacity: 1}}
              transition={{...transition, duration: 8}}
+             className="w-full "
           >
-            <h1>MENU</h1>
-            <button onClick={() => openMenu(false)}>Close</button>
+
+         
+         <div className='flex w-full justify-start p-4'>  
+            <button onClick={() => openMenu(false)}><FaBackward/></button>
+            </div>
+            <div className='actualLinks justify-center items-center'>
+              <div className={`flex w ${open === "Home" ? "selected": ""}`}>
+                <FaHome/>
+              <a onClick={() => setOpen("Home")}>Home</a>
+              </div>
+              <div className={` w flex ${open === "Me" ? "selected": ""}`}>
+                <FaMale/>
+             <a  onClick={() => setOpen("Me")}> Me</a>
+             </div>
+             <div className={`flex w ${open === "Projects" ? "selected": ""}`}>
+               <FaBriefcase/>
+             <a  onClick={() => setOpen("Projects")}>Projects</a>
+             </div>
+             {/* <div className={`flex ${open === "" ? "selected": ""}`}>
+               <FaCommentDots/>
+             <a  onClick={() => setOpen("")}>Contact</a>
+             </div> */}
+            </div>
             </motion.div>
         </motion.div>
          <Panels/>

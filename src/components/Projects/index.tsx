@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-import {motion, AnimateSharedLayout} from "framer-motion"
+import {motion, AnimateSharedLayout, AnimatePresence} from "framer-motion"
 
 interface link {
      icon: string,
@@ -107,7 +107,7 @@ const filters = [
      {title: "All", color: "#BE123C"}, 
      {title: "Projects", color: "#BE123C"}, 
      {title: "DevTools", color: "#BE123C"}, 
-     {title: "Articles", color: "#BE123C"}, 
+     // {title: "Articles", color: "#BE123C"}, 
 ]
 
 
@@ -116,11 +116,18 @@ function Projects(){
 
      const [projects, setProjects] = useState(p);
      const [selected, setSelected] = useState(0);
+     const [filtering, setFiltering] = useState(false);
 
      const filterP = (filter: string)=> {
+          // setFiltering(true)
           setProjects(prev => {
                return p.filter((p) => p.type[filter] !== undefined)
           })
+     //    const m = setTimeout(() => {
+     //           setFiltering(false);
+     //           clearTimeout(m)
+     //      }, 100);
+
      }
 
 return (
@@ -132,7 +139,7 @@ return (
 
           <AnimateSharedLayout>
           {/* the header(framered list) */}
-          <motion.ol className="">
+          <motion.ol className="hide-for-mobile">
                {filters.map(({title, color}, i)=> (
                     <motion.h3
                     key={i}
@@ -158,17 +165,24 @@ return (
          </motion.ol>
           </AnimateSharedLayout>
  
-          <motion.div animate className="w-full m-4 h-auto" >
+          <div  className="w-full m-4 h-auto pt" >
+             
+               <motion.div className="w-full">
+
+            
+               <AnimatePresence>
           {/* filtered projects */}
           {projects.map((p, i)=> (
-               
-                    <>
-                       { i % 2 == 0 ?  <Project p={p} even={true}/> : <Project p={p} even={false}/>}
-                    </>
+                        <>
+                       { i % 2 == 0 ?  <Project p={p} even={true} index={i}/> : <Project p={p} even={false} index={i}/>}
+                       </> 
                   
               
           ))}
-     </motion.div>
+              </AnimatePresence>
+             </motion.div>
+            
+     </div>
 
 
 </div>
@@ -184,12 +198,17 @@ export default Projects
 
 const transition = {duration: .8, ease: [0.6,-.05, .01, .9 ]}
 //@ts-ignore
-function Project({p, even}){
+function Project({p, even, index}){
      return (
           <motion.div
+          layout
+       
+          key={index}
           initial={{opacity: 0}}
           animate= {{opacity: 1}}
-          transition={{...transition, duration: .8}}
+          exit= {{ opacity: 0}}
+          transition={{...transition, duration: .3}}
+        
           className={`grid-ishp mt-12  ${even ? 'flow-reverse': "flow-normal "}`} style={{height: "100vh"}}>
                <div>
                   <div className="flex justify-center">
