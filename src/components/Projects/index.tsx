@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import {motion, AnimateSharedLayout, AnimatePresence} from "framer-motion"
 
@@ -49,20 +49,20 @@ const p: Array<project>  = [
               },
               {
                name: "AlgoViz", 
-               avatar: "",
+               avatar: "/projects/AlgoViz/1.png",
                tools: [ " JavaScript ", " CSS ", " HTML ", {name: " Atomicus "}, " HTML canvas  "],
                description: "Algorithm Visualizer Front-end",
                type: {"Projects": "", "All": ""},
  
               },
-              {
-               name: "Texte", 
-               avatar: "",
-               tools: [" JavaScript ", " CSS ", " HTML ", {name: " Atomicus "}, " ML5 "],
-               description: "Natural Language Processing Frontend",
-               type: {"Projects": "", "All": ""},
+          //     {
+          //      name: "Texte", 
+          //      avatar: "",
+          //      tools: [" JavaScript ", " CSS ", " HTML ", {name: " Atomicus "}, " ML5 "],
+          //      description: "Natural Language Processing Frontend",
+          //      type: {"Projects": "", "All": ""},
  
-              },
+          //     },
               {
                name: "Atomicus", 
                avatar: "/projects/atomicus/1.png",
@@ -88,15 +88,15 @@ const p: Array<project>  = [
                type: {"DevTools": "", "All": ""},
  
               },
-              {
+          //     {
 
-               name: "vec", 
-               avatar: "",
-               tools: [" Zig ", " wasm " , " JavaScript "],
-               description: "",
-               type: {"DevTools": "", "All": ""},
+          //      name: "vec", 
+          //      avatar: "",
+          //      tools: [" Zig ", " wasm " , " JavaScript "],
+          //      description: "",
+          //      type: {"DevTools": "", "All": ""},
  
-              }
+          //     }
             
 
 
@@ -129,6 +129,11 @@ function Projects(){
      //      }, 100);
 
      }
+
+
+     // useEffect(()=> {
+     //   filterP("Projects")
+     // }, [filterP])
 
 return (
 
@@ -207,7 +212,7 @@ function Project({p, even, index}){
           initial={{opacity: 0}}
           animate= {{opacity: 1}}
           exit= {{ opacity: 0}}
-          transition={{...transition, duration: .3}}
+          transition={{...transition, duration: .8}}
         
           className={`grid-ishp mt-12  ${even ? 'flow-reverse': "flow-normal "}`} style={{height: "100vh"}}>
                <div>
