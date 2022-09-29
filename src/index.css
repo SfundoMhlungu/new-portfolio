@@ -131,10 +131,74 @@ button:focus-visible {
 } */
 
 
+@media (max-width: 948px) {
+  .shrink-hero{
+    /* background-color: red; */
+    /* t r b l */
+    margin: 0 3em 1.5em 3em;
+   padding: 0 0 3em 0;
+  }
+  
+}
+
+@media (max-width: 548px){
+  .shrink-hero{
+    /* background-color: red; */
+    /* t r b l */
+  display: none;
+  }
+}
+
 @media (max-width: 63.9375em) {
   .hide-for-mobile {
     display: none;
   }
+
+  .home{
+    text-align: center;
+  }
+
+  .home p {
+      padding: 0  4em;
+  }
+.grid-ishm{
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.grid-ishm > *{
+  flex: 1 1 28em;
+}
+  .home-on-mobi{
+    padding-top: 2em;
+  }
+
+  .home-on-mobi h2 {
+    font-size: .1em;
+  }
+
+  .typing-mobi{
+    font-size: 1em;
+  }
+  .center-for-mobi{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2em 4em;
+    
+  }
+
+  .mobi{
+    font-size: 1.5em;
+  }
+  .on-mobi{
+    position: absolute;
+    z-index: -10;
+   opacity: .2;
+  }
+
 
   h1{
     font-size: 2em;

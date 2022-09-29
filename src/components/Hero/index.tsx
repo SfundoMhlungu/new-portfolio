@@ -81,7 +81,7 @@ useEffect(()=> {
 
 return (
 <AnimatePresence>
-  <div className='hero grid-ish'> 
+  <div className='hero grid-ishm grid-ish  home'> 
     <div className="overlay-op">
 
     </div>
@@ -131,11 +131,11 @@ return (
    
        <motion.div 
             variants={item2}
-       className="hi">
+       className="hi home-on-mobi">
            <motion.h1
             variants={item2}
             >Hi👋🏽,</motion.h1>
-           <motion.h2  variants={item2}  id="target" className="typing"></motion.h2>
+           <motion.h2  variants={item2}  id="target" className="typing typing-mobi"></motion.h2>
         </motion.div>
       {/* frontend dev */}
         {/* <h2>Frontend Dev.</h2> */}
@@ -158,12 +158,12 @@ return (
      initial="hidden"
      animate="show"
      exit="exit"
-    className="flex flex-col text-center mt-16 relative">
+    className="flex flex-col text-center mt-16 relative shrink-hero">
       {/* hero image */}
       <div className="hero-img">
     
       </div>
-      <motion.div  variants={item} className="floaty flex bottom-left mb-8">
+      <motion.div  variants={item} className="floaty flex bottom-left mb-8 hide-for-mobile">
       
       <img style={{height: "30px"}} src="/icons8-programmer-64.png"/>
          Low level Programmer
@@ -175,7 +175,7 @@ return (
       Typescript
 
       </motion.div>
-      <motion.div variants={item} className="floaty flex top-left mr-2 mt-6">
+      <motion.div variants={item} className="floaty flex top-left mr-2 mt-6 hide-for-mobile">
       <img style={{height: "30px", opacity: .8}} src="icons8-javascript-48.png"/>
        JavaScript
      

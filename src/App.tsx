@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import {motion, AnimatePresence, AnimateSharedLayout} from "framer-motion"
-import { FaHome, FaMale, FaBriefcase, FaCommentDots, FaBackward } from "react-icons/fa";
+import { FaHome, FaMale, FaBriefcase, FaCommentDots, FaBackward, FaLink} from "react-icons/fa";
 
 // componets
 import NavBar from "./components/NavBar/"
@@ -107,10 +107,10 @@ function App() {
                <FaBriefcase/>
              <a  onClick={() => setOpen("Projects")}>Projects</a>
              </div>
-             {/* <div className={`flex ${open === "" ? "selected": ""}`}>
-               <FaCommentDots/>
-             <a  onClick={() => setOpen("")}>Contact</a>
-             </div> */}
+             <div className={`flex ${open === "" ? "selected": ""}`}>
+               <FaLink/>
+             <a  href='https://github.com/SfundoMhlungu/DigiResume/blob/main/public/Resume.pdf' download target="_blank">Resume</a>
+             </div>
             </div>
            
               
@@ -175,6 +175,10 @@ const Menu = ({openMenu, open, setOpen}) => {
              <div className={`flex w ${open === "Projects" ? "selected": ""}`}>
                <FaBriefcase/>
              <a  onClick={() => setOpen("Projects")}>Projects</a>
+             </div>
+             <div className={`flex w ${open === "" ? "selected": ""}`}>
+               <FaLink/>
+             <a  href='https://github.com/SfundoMhlungu/DigiResume/blob/main/public/Resume.pdf' target="_blank" download>Resume</a>
              </div>
              {/* <div className={`flex ${open === "" ? "selected": ""}`}>
                <FaCommentDots/>

@@ -210,6 +210,7 @@ img {
 .typing {
   position: relative;
   min-height: 1em;
+  font-size: 1em;
 }
 
 .typing::after{
@@ -455,6 +456,22 @@ height: 100%;
   background-color: white;
   box-shadow: 0 11px 15px -7px rgb(0 0 0 / 20%), 0 24px 38px 3px rgb(0 0 0 / 14%), 0 9px 46px 8px rgb(0 0 0 / 12%);
   border-radius: 1em;
+}
+
+.notfloaty{
+  display: flex;
+  margin: .5em 0;
+  padding: .5em 3em;
+  z-index: 2;
+  width: fit-content;
+  background-color: white;
+  box-shadow: 0 11px 15px -7px rgb(0 0 0 / 20%), 0 24px 38px 3px rgb(0 0 0 / 14%), 0 9px 46px 8px rgb(0 0 0 / 12%);
+  border-radius: 1em;
+
+}
+
+.MecolorText {
+   color: #334155;
 }
 
 .top-left{
