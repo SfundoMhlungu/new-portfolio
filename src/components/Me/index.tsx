@@ -1,10 +1,10 @@
 
-import Zig from "/public/file-type-zig.svg"
-import nextjs from "/public/next-js.svg"
-import wasm from "/public/file-type-wasm.svg"
-import Ionic from "/public/file-type-ionic.svg"
-import HTML from "/public/html-5-logo.svg"
-import AS from "/public/as.svg"
+import Zig from "/file-type-zig.svg"
+import nextjs from "/next-js.svg"
+import wasm from "/file-type-wasm.svg"
+import Ionic from "/file-type-ionic.svg"
+import HTML from "/html-5-logo.svg"
+import AS from "/as.svg"
 
 
 const height = "20px"
@@ -23,15 +23,15 @@ return(
          <h3 className="text-white">About Me</h3>
          <div>
             <p className="text-xl mb-4">
-            Hello! My name is Sfundo Mhlungu and I love all thigs JavaScript, with main focus on the Front-end part.
-            My interest in coding began back in 2018 when discoverd Python and God mode scripts nearly frying my pc,
+            Hello! My name is Sfundo Mhlungu and I love all things JavaScript, with the main focus on the Front-end part.
+            My interest in coding began back in 2018 when I discovered Python and god mode scripts, nearly frying my pc and
             never looked back!
               
             </p>
 
             <p  className="text-xl mb-4">
-            Fast forward today, my main is building robust and performant applications for all plartforms with JavaScript,
-            I have an undying passion for web workers, webAssembly and TS, I extensively utilize them as much as I can if I get a chance.
+            Fast forward today, my main focus is building robust and performant applications for all platforms with JavaScript,
+            I have an undying passion for web workers, webAssembly and Typescript, I extensively utilize them any chance I get.
             </p>
             <p  className="text-xl mb-4">
                If I am not building stuff, I am definetley chilling with my friends or blogging on dev.to about JS and stuff.

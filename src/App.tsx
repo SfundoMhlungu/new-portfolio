@@ -86,7 +86,7 @@ function App() {
       
               <img style={{height: "40px"}} src="icons8-github-50.png"/>
             </a>
-            <a href="https://github.com/SfundoMhlungu" target="_blank">
+            <a href="https://www.linkedin.com/in/sfundo-mhlungu-331588168/" target="_blank">
 
             <img style={{height: "40px"}} src="icons8-linkedin-50.png"/>
             </a>

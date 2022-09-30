@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react"
 
 import {motion, AnimateSharedLayout, AnimatePresence} from "framer-motion"
+import NPM from "/logo-npm.svg"
+import YT from "/youtube-fill.svg"
+import Git from "/github.svg"
+import ExternalLink from "/alternate-external-link.svg"
 
 interface link {
      icon: string,
@@ -29,6 +33,8 @@ const p: Array<project>  = [
               tools: [" JavaScript ", " CSS ", " HTML ", {name: " Atomicus "},{name: " Bokke.js "}],
               description: "Desktop Dataframe Software",
               type: {"Projects": "", "All": ""},
+              links: {youtube: {icon: YT, link: "https://www.youtube.com/watch?v=P6vrd7TgYU0&feature=youtu.be&ab_channel=SifundoMhlungu"}, live: {icon: ExternalLink, link: "https://bokke2-0.vercel.app/"}}
+
 
              },
              {
@@ -37,6 +43,8 @@ const p: Array<project>  = [
                tools: [" React ", " Next Js ", " Ionic ", " Tailwind ", " PullState "],
                description: "Allergic reaction tracker & predictor", 
                type: {"Projects": "", "All": ""},
+               links: {youtube: {icon: "", link: ""}}
+
  
               },
               {
@@ -45,6 +53,8 @@ const p: Array<project>  = [
                tools: [" JavaScript "  , " CSS " , " HTML ", " Supabase ", " netlify serveless " ],
                description: "Website for an ebook",
                type: {"Projects": "", "All": ""},
+               links: { live: {icon: ExternalLink, link: "https://6235c7675c4e605dd8e76ec0--ebook-js.netlify.app/"}}
+
  
               },
               {
@@ -53,6 +63,8 @@ const p: Array<project>  = [
                tools: [ " JavaScript ", " CSS ", " HTML ", {name: " Atomicus "}, " HTML canvas  "],
                description: "Algorithm Visualizer Front-end",
                type: {"Projects": "", "All": ""},
+               links: {github: {icon: Git, link: "https://github.com/SfundoMhlungu/AlgoViz"}, dev: {icon: ExternalLink, link: "https://algo-viz8.vercel.app/"}}
+
  
               },
           //     {
@@ -69,6 +81,7 @@ const p: Array<project>  = [
                tools: [" Typescript " ],
                description: "Utility functions for creating stateful HTML elements",
                type: {"DevTools": "", "All": ""},
+               links: {github: {icon: Git, link: "https://github.com/SfundoMhlungu/atomica"}, npm: {icon: NPM, link: "https://www.npmjs.com/package/atomicus"}}
  
               },
               {
@@ -77,6 +90,8 @@ const p: Array<project>  = [
                tools: [" Typescript ", " Web workers ", " Chart.js "],
                description: "Dataframe package",
                type: {"DevTools": "", "All": ""},
+               links: {github: {icon: Git, link: "https://github.com/SfundoMhlungu/bokke.js"}, dev: {icon: ExternalLink, link: "https://dev.to/sfundomhlungu/javascript-dataframe-data-science-in-the-browser-6gl"}, npm: {icon: NPM, link: "https://www.npmjs.com/package/bokke.js"}}
+
  
               },
               {
@@ -86,6 +101,8 @@ const p: Array<project>  = [
                tools: [" Typescript "],
                description: "Tool for creating reactive forms in JS",
                type: {"DevTools": "", "All": ""},
+               links: {github: {icon: Git, link: "https://github.com/SfundoMhlungu/vanilla-forms"}, dev: {icon: ExternalLink, link: "https://dev.to/sfundomhlungu/handle-forms-like-a-boss-reactive-forms-in-vanilla-javascript-4930"}, npm: {icon: NPM, link: "https://www.npmjs.com/package/vanilla-forms"}}
+
  
               },
           //     {
@@ -238,6 +255,15 @@ function Project({p, even, index}){
                          //    typeof tool === "object"? 
                          //     (<p>{tool.name}</p>):
                          //    (<p>{tool}</p>)
+                       })}
+
+                  </div>
+                  <div className="flex w-full justify-center">
+
+                       {Object.keys(p.links).map((key, i)=> {
+                            return <div className="m-4">
+                                  <a target="_blank" href={p.links[key].link}><img  style={{height: "40px"}} src={p.links[key].icon}/></a>
+                            </div>
                        })}
 
                   </div>
