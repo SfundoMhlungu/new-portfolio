@@ -24,17 +24,17 @@ return(
          <div>
             <p className="text-xl mb-4">
             Hello! My name is Sfundo Mhlungu and I love all things JavaScript, with the main focus on the Front-end part.
-            My interest in coding began back in 2018 when I discovered Python and god mode scripts, nearly frying my pc and
+            My interest in coding began back in 2018 when I discovered Python and god mode scripts, nearly frying my PC and
             never looked back!
               
             </p>
 
             <p  className="text-xl mb-4">
-            Fast forward today, my main focus is building robust and performant applications for all platforms with JavaScript,
+            Fast forward to today, my main focus is building robust and performant applications for all platforms with JavaScript,
             I have an undying passion for web workers, webAssembly and Typescript, I extensively utilize them any chance I get.
             </p>
             <p  className="text-xl mb-4">
-               If I am not building stuff, I am definetley chilling with my friends or blogging on dev.to about JS and stuff.
+               If I am not building stuff, I am definitely  chilling with my friends or blogging on dev.to about JS and stuff.
             </p>
          </div>
       </div>
